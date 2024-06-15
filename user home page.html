@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eBill Application - User Home</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+        header {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #ffffff33;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+        }
+        nav ul li a:hover {
+            background-color: #6667ab;
+        }
+        main {
+            padding: 20px;
+        }
+        footer {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            border-top: 1px solid #ffffff33;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .section-title {
+            margin-top: 20px;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            color: white;
+            margin-bottom: 20px;
+        }
+        .card-header {
+            background: rgba(255, 255, 255, 0.2);
+            border-bottom: none;
+        }
+        .card-body {
+            padding: 20px;
+        }
+        .btn-primary {
+            background: #1dbf73;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 20px;
+        }
+        .btn-primary:hover {
+            background: #17a463;
+        }
+        .btn-link {
+            color: #1dbf73;
+        }
+        .btn-link:hover {
+            color: #17a463;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Your Dashboard</h1>
+        <nav>
+            
+            <ul>
+                
+                <li><a href="user home page.html">Home</a></li>
+                <li><a href="new light connection.html">Apply for New Connection</a></li>
+                <li><a href="bill payment.html">Pay Bill</a></li>
+                <li><a href="check history.html">Payment History</a></li>
+                <li><a href="feedback.html">File a Complaint</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="section-title">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Your Current Bill</h2>
+                </div>
+                <div class="card-body">
+                    <p><strong>Bill Amount:</strong> ₹2000</p>
+                    <p><strong>Due Date:</strong> May 30, 2024</p>
+                    <!-- <button class="btn btn-primary">Pay Now</button> -->
+                    <a href="bill payment.html" class="btn btn-primary">pay Now</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-title">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Usage Statistics</h2>
+                </div>
+                <div class="card-body">
+                    <canvas id="usageChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-title">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Notifications & Alerts</h2>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group">
+                        <li class="list-group-item bg-transparent text-white">Your bill is due in 5 days</li>
+                        <li class="list-group-item bg-transparent text-white">Scheduled maintenance on June 5, 2024</li>
+                        <li class="list-group-item bg-transparent text-white">New updates in the billing policy</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-title">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Support & Contact</h2>
+                </div>
+                <div class="card-body">
+                    <p>If you have any issues, please contact our support team.</p>
+                    <p><strong>Email:</strong> support@ebillapp.com</p>
+                    <p><strong>Phone:</strong> +1 800 123 456</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-title">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Account Settings</h2>
+                </div>
+                <div class="card-body">
+                    <a href="signup.html" class="btn btn-link">Update Profile</a>
+                    <a href="#" class="btn btn-link">Change Password</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Your E-Bill.</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var ctx = document.getElementById('usageChart').getContext('2d');
+        var usageChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+                datasets: [{
+                    label: 'Electricity Usage (kWh)',
+                    data: [65, 59, 80, 81, 56, 55],
+                    backgroundColor: 'rgba(102, 126, 234, 0.2)',
+                    borderColor: 'rgba(102, 126, 234, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

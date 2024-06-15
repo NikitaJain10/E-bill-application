@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Payment</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 50px auto;
+            display: flex;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            padding: 0;
+        }
+        .left-section {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px;
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .left-section h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .left-section p {
+            font-size: 1em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .right-section {
+            width: 60%;
+            padding: 40px;
+            color: #333;
+        }
+        .right-section h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+        .form-group label {
+            font-weight: bold;
+            color: #333;
+        }
+        .form-control {
+            border: 1px solid #ccc;
+            color: #333;
+        }
+        .btn-primary {
+            background: #28a745;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 20px;
+            width: 100%;
+        }
+        .btn-primary:hover {
+            background: #218838;
+        }
+        .payment-method-section {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <h2>Pay Your Bill Easily and Securely</h2>
+            <p>"Ensure your electricity services remain uninterrupted by paying your bills on time."</p>
+            <div class="user-info">
+                <img src="./visa.png" alt="User Image"  width="200">
+                <div class="user-details">
+                    <p><strong>Customer Name</strong></p>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="right-section">
+            <h1>Bill Payment</h1>
+            <form>
+                <div class="form-group">
+                    <label for="accountNumber">Account Number:</label>
+                    <input type="text" class="form-control" id="accountNumber" placeholder="Enter your account number" required>
+                </div>
+                <div class="form-group">
+                    <label for="billAmount">Bill Amount:</label>
+                    <input type="number" class="form-control" id="billAmount" placeholder="Enter bill amount" required>
+                </div>
+                <div class="form-group">
+                    <label for="dueDate">Due Date:</label>
+                    <input type="date" class="form-control" id="dueDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="paymentMethod">Payment Method:</label>
+                    <select class="form-control" id="paymentMethod" onchange="showPaymentFields()" required>
+                        <option value="">Select payment method</option>
+                        <option value="creditCard">Credit Card</option>
+                        <option value="debitCard">Debit Card</option>
+                        <option value="netBanking">Net Banking</option>
+                        <option value="upi">UPI</option>
+                    </select>
+                </div>
+                <div id="creditDebitFields" style="display: none;">
+                    <div class="form-group">
+                        <label for="cardDetails">Card Details:</label>
+                        <input type="text" class="form-control" id="cardDetails" placeholder="Enter your card number">
+                    </div>
+                    <div class="form-group">
+                        <label for="cardExpiry">Card Expiry:</label>
+                        <input type="month" class="form-control" id="cardExpiry">
+                    </div>
+                    <div class="form-group">
+                        <label for="cvv">CVV:</label>
+                        <input type="password" class="form-control" id="cvv" placeholder="Enter CVV">
+                    </div>
+                </div>
+                <div id="upiField" style="display: none;">
+                    <div class="form-group">
+                        <label for="upiId">UPI ID:</label>
+                        <input type="text" class="form-control" id="upiId" placeholder="Enter your UPI ID">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Pay Now</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function showPaymentFields() {
+            var paymentMethod = document.getElementById('paymentMethod').value;
+            var creditDebitFields = document.getElementById('creditDebitFields');
+            var upiField = document.getElementById('upiField');
+
+            creditDebitFields.style.display = 'none';
+            upiField.style.display = 'none';
+
+            if (paymentMethod === 'creditCard' || paymentMethod === 'debitCard') {
+                creditDebitFields.style.display = 'block';
+            } else if (paymentMethod === 'upi') {
+                upiField.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

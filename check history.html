@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electric Bill History Check</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            font-family: Arial, sans-serif;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+        .navbar-brand, .nav-link {
+            color: white !important;
+        }
+        .form-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: white;
+        }
+        .form-control {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid #ccc;
+            color: white;
+        }
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .btn-primary {
+            background: #28a745;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 20px;
+            width: 100%;
+        }
+        .btn-primary:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">E-Bill App</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="user home page.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="new light connection.html">Apply for New Connection</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="bill payment.html">Pay Bill</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="check history.html">Bill History</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="feedback.html">File a Complaint</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="form-container">
+            <h2>Check Electric Bill History</h2>
+            <form>
+                <div class="form-group">
+                    <label for="customerID">Customer ID</label>
+                    <input type="text" class="form-control" id="customerID" placeholder="Enter your Customer ID" required>
+                </div>
+                <div class="form-group">
+                    <label for="startDate">Start Date</label>
+                    <input type="date" class="form-control" id="startDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="endDate">End Date</label>
+                    <input type="date" class="form-control" id="endDate" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Check History</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="text-center mt-5">
+        <p>&copy; 2024 Your E-Bill. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

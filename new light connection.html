@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for New Light Connection</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            color: white;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+        .form-group label {
+            font-weight: bold;
+            color: #e0e0ff;
+        }
+        .form-control {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid #ccc;
+            color: #e0e0ff;
+        }
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .btn-primary {
+            background: #28a745;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 20px;
+            width: 100%;
+        }
+        /* .btn-primary:hover {
+            background: #218838;
+        } */
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .section-title {
+            font-size: 1.5em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Apply for New Light Connection</h1>
+        <form>
+            <div class="section-title">Personal Information</div>
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter your full name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email address" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <textarea class="form-control" id="address" rows="3" placeholder="Enter your address" required></textarea>
+            </div>
+
+            <div class="section-title">Connection Details</div>
+            <div class="form-group">
+                <label for="connection-type">Connection Type:</label>
+                <select class="form-control" id="connection-type" required>
+                    <option value="">Select connection type</option>
+                    <option value="residential">Residential</option>
+                    <option value="commercial">Commercial</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="comments">Additional Comments:</label>
+                <textarea class="form-control" id="comments" rows="3" placeholder="Any additional comments or requests"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-hover">Submit Application</button>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
